@@ -1,0 +1,50 @@
+<div class="list-page-container">
+  <header class="page-header">
+    <h1 class="page-title">Danh sách từ vựng</h1>
+    <div class="header-actions">
+      <div class="search-form">
+        <input type="text" class="search-input" placeholder="Tìm kiếm...">
+      </div>
+      <%= link_to "Tạo từ mới +", new_word_path, class: "button button-primary" %>
+    </div>
+  </header>
+
+  <div class="content-panel">
+    <table class="data-table">
+      <thead class="data-table-header">
+        <tr>
+          <th>Từ vựng</th>
+          <th>Mô tả ngắn</th>
+          <th>Ngày tạo</th>
+          <th class="column-actions">Hành động</th>
+        </tr>
+      </thead>
+      <tbody class="data-table-body">
+        <% if @words.any? %>
+          <% @words.each do |word| %>
+            <tr>
+              <td data-label="Từ vựng"><%= word.content %></td>
+              <td data-label="Mô tả ngắn"><%= word.meaning %></td>
+              <td data-label="Ngày tạo"><%= word.created_at.strftime("%d/%m/%Y") %></td>
+              <td data-label="Hành động" class="cell-actions">
+                <a href="#" class="action-link">Xem</a>
+                <%= link_to "Sửa", edit_word_path(word), class: "action-link" %>
+                <%= button_to "Xóa", word_path(word),
+                      method: :delete,
+                      class: "action-button-delete",
+                      form_class: "action-form",
+                      data: { turbo_confirm: "Bạn có chắc chắn muốn xóa từ này?" } %>
+              </td>
+            </tr>
+          <% end %>
+        <% else %>
+          <tr>
+            <td colspan="4" class="cell-empty">
+              Chưa có từ nào được tạo. Hãy bắt đầu tạo từ đầu tiên của bạn!
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

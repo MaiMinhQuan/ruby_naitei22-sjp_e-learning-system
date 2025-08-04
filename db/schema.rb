@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_07_24_020258) do
+ActiveRecord::Schema[7.0].define(version: 2025_08_04_081159) do
   create_table "microposts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
@@ -33,6 +33,14 @@ ActiveRecord::Schema[7.0].define(version: 2025_07_24_020258) do
     t.integer "gender"
     t.string "remember_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "words", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "content", null: false
+    t.text "meaning", null: false
+    t.integer "word_type", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

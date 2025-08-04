@@ -1,0 +1,317 @@
+/* app/assets/stylesheets/forms.css */
+
+/* --- Container chung --- */
+.word-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* --- Khối báo lỗi --- */
+.form-errors {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #f5c2c7;
+  border-radius: 0.25rem;
+  color: #842029;
+  background-color: #f8d7da;
+}
+
+.form-errors-title {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.form-errors-list {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+/* --- Các trường nhập liệu --- */
+.form-field {
+  margin-bottom: 1.5rem; /* Tương đương mb-4 */
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600; /* Tương đương fw-semibold */
+  font-size: 1rem;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;   /* Kích thước lớn */
+  font-size: 1.25rem;      /* Kích thước lớn */
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.3rem;
+  box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-input:focus {
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Áp dụng cho cả text_area và select */
+select.form-input {
+  /* Có thể thêm style riêng cho select nếu cần */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px 12px;
+}
+
+
+
+/* --- Nút bấm và hành động --- */
+.form-actions {
+  display: flex; /* BẮT BUỘC: Đặt các nút trên cùng một hàng */
+  gap: 1rem;     /* Tùy chọn: Khoảng cách giữa các nút */
+}
+
+/* Áp dụng cho các nút bên trong .form-actions */
+.form-actions .button {
+  flex: 1;       /* BẮT BUỘC: Yêu cầu mỗi nút chiếm không gian bằng nhau */
+  text-align: center; /* Đảm bảo chữ luôn ở giữa nút */
+  height: 35px;
+}
+
+
+/* Các style .button, .button-primary, .button-danger bạn giữ nguyên */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  font-size: 1.25rem;
+  font-weight: 500; /* Tăng độ đậm cho giống ảnh */
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 0.3rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+.button-primary {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.button-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+.button-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.button-danger:hover {
+  background-color: #bb2d3b;
+  border-color: #b02a37;
+}
+
+.page-container {
+  margin-top: 3rem; /* Tương đương mt-5 */
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 720px; /* Chiều rộng tương đương col-lg-6/col-md-8 */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;  /* Đảm bảo có khoảng cách với lề màn hình nhỏ */
+  padding-right: 15px;
+}
+
+.form-card {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.375rem; /* bo góc nhẹ */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Tương đương class .shadow */
+}
+
+.form-card-body {
+  padding: 3rem; /* Tương đương p-5 */
+}
+
+.form-title {
+  text-align: center;      /* Tương đương text-center */
+  margin-bottom: 1.5rem;   /* Tương đương mb-4 */
+  font-weight: 700;        /* Tương đương fw-bold */
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+/* app/assets/stylesheets/words.css */
+
+/* --- Layout chung cho trang danh sách --- */
+.list-page-container {
+  max-width: 1140px;
+  margin: 2rem auto;
+  padding: 0 15px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  min-width: 250px;
+}
+
+/* --- Panel chứa bảng --- */
+.content-panel {
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 0.375rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  overflow-x: auto; /* Giúp bảng có thể cuộn ngang trên màn hình nhỏ */
+}
+
+/* --- Bảng dữ liệu --- */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.data-table-header {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.data-table th,
+.data-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.data-table th {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Căn chỉnh cột actions sang bên phải */
+.data-table .column-actions {
+  text-align: right;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* --- Các ô đặc biệt --- */
+.cell-actions {
+  display: flex;
+  justify-content: flex-end; /* Căn các nút sang phải */
+  align-items: center;
+  gap: 1rem;
+}
+
+.cell-empty {
+  text-align: center;
+  color: #6c757d;
+  padding: 3rem 1rem;
+  font-style: italic;
+}
+
+/* --- Các nút hành động trong bảng --- */
+.action-link {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 500;
+}
+.action-link:hover {
+  text-decoration: underline;
+}
+
+/* Style cho form và nút xóa */
+.action-form {
+  margin: 0; /* Loại bỏ margin mặc định của form */
+  padding: 0;
+  display: inline;
+}
+
+.action-button-delete {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: #dc3545;
+  font-family: inherit;
+  font-size: inherit; /* Kế thừa font từ cha */
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+.action-button-delete:hover {
+  text-decoration: underline;
+}
+
+/* .flash-notice {
+  margin: 24px auto;
+  padding: 16px 24px;
+  background: #e6f4ea;
+  color: #217a3c;
+  border: 1.5px solid #b7e0c3;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(33, 122, 60, 0.05);
+  text-align: center;
+} */
+
+/* .flash-success, .flash-notice {
+  margin: 24px auto 0 auto;
+  padding: 16px 24px;
+  background: #e6f4ea;
+  color: #217a3c;
+  border: 1.5px solid #b7e0c3;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  max-width: 700px;
+  box-shadow: 0 2px 8px rgba(33, 122, 60, 0.05);
+  text-align: center;
+  transition: opacity 0.5s;
+  opacity: 1;
+  z-index: 1000;
+  position: relative;
+} */

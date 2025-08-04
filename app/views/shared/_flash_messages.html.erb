@@ -1,0 +1,28 @@
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <div class="flash-message <%= name %>" id="flash-<%= name %>">
+      <%= msg %>
+    </div>
+
+    <script>
+      // Auto hide flash message after 3 seconds
+      setTimeout(function() {
+        const flashMessage = document.getElementById('flash-<%= name %>');
+        if (flashMessage) {
+          flashMessage.classList.add('fade-out');
+          setTimeout(function() {
+            flashMessage.remove();
+          }, 300);
+        }
+      }, 3000);
+
+      // Allow manual close by clicking
+      document.getElementById('flash-<%= name %>').addEventListener('click', function() {
+        this.classList.add('fade-out');
+        setTimeout(() => {
+          this.remove();
+        }, 300);
+      });
+    </script>
+  <% end %>
+<% end %>

@@ -1,0 +1,14 @@
+<div class="page-container">
+  <div class="content-wrapper">
+    <div class="form-card">
+      <div class="form-card-body">
+        <h1 class="form-title">Tạo từ mới</h1>
+
+        <%# Các biến này sẽ được truyền vào partial 'form' %>
+        <% submit_text = "Tạo từ" %>
+        <% show_cancel = true %>
+        <%= render 'form', submit_text: submit_text, show_cancel: show_cancel %>
+      </div>
+    </div>
+  </div>
+</div>

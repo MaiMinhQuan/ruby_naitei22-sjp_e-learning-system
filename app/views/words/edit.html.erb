@@ -1,0 +1,16 @@
+<div class="page-container">
+  <div class="content-wrapper">
+    <div class="form-card">
+      <div class="form-card-body">
+        <h1 class="form-title">Chỉnh sửa từ</h1>
+
+        <%# Thay đổi nội dung của nút submit %>
+        <% submit_text = "Cập nhật từ" %>
+        <% show_cancel = true %>
+
+        <%# 'render' partial 'form' với các biến mới %>
+        <%= render 'form', submit_text: submit_text, show_cancel: show_cancel %>
+      </div>
+    </div>
+  </div>
+</div>
